@@ -1,0 +1,16 @@
+<h1>Welcome,  <%= current_user.username %></h1>
+
+<div class="repos">
+  <h3>Your Repos</h3>
+    <ul>
+        <% @user_repos.each do |data| %>
+        <li>
+          <% if !data.private? %>
+            <p> <%= data.name %> - Public </p>
+          <% else %>
+            <p> <%= data.name  %> - Private </p>
+          <% end %>
+        </li>
+        <% end %>
+    </ul>
+</div>
